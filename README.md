@@ -8,6 +8,6 @@ Game rules:
 * If all players picked the same number, a random winner is chosen.
 
 The simulation allows you to chose a strategy for each player:
-![img/screen1.png]
-![img/screen2.png]
-![img/screen3.png]
+![Screenshot: All use Nash equilibrium strategy](img/screen1.png)
+![Screenshot: Two players pick random 1, 2 or 3. One player always picks 1.](img/screen2.png)
+![Screenshot: Two players use Nash equilibrium strategy. One player always picks 1.](img/screen3.png)
