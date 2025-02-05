@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO</title>
     <script defer src="index.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
     <style>
-        table {
-            border-collapse: collapse;
-            width: 50%;
-            margin: 20px auto;
+        #link {
+          text-align: right;
+          padding-right: 1rem;
         }
+
+        table {
+          border-collapse: collapse;
+          width: 50%;
+          margin: 20px auto;
+        }
+
         th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
         }
 
         #controls {
@@ -43,60 +51,63 @@
           overflow: scroll;
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="link">
+      <a class="github-button" href="https://github.com/BramMeerten/nash-equilibrium" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="View on GitHub">View on Github</a>
+    </div>
     <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Player 1</th>
-                <th>Player 2</th>
-                <th>Player 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nash Equilibrium</td>
-                <td><input type="radio" name="p1" value="nash" checked onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p2" value="nash" checked onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p3" value="nash" checked onChange="stopSimulation()"></td>
-            </tr>
-            <tr>
-                <td>Random 1, 2 or 3</td>
-                <td><input type="radio" name="p1" value="oneTwoThree" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p2" value="oneTwoThree" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p3" value="oneTwoThree" onChange="stopSimulation()"></td>
-            </tr>
-            <tr>
-                <td>Always 1</td>
-                <td><input type="radio" name="p1" value="alwaysOne" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p2" value="alwaysOne" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p3" value="alwaysOne" onChange="stopSimulation()"></td>
-            </tr>
-            <tr>
-                <td>Always 2</td>
-                <td><input type="radio" name="p1" value="alwaysTwo" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p2" value="alwaysTwo" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p3" value="alwaysTwo" onChange="stopSimulation()"></td>
-            </tr>
-            <tr>
-                <td>Always 99</td>
-                <td><input type="radio" name="p1" value="always99" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p2" value="always99" onChange="stopSimulation()"></td>
-                <td><input type="radio" name="p3" value="always99" onChange="stopSimulation()"></td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Player 1</th>
+          <th>Player 2</th>
+          <th>Player 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nash Equilibrium</td>
+          <td><input type="radio" name="p1" value="nash" checked onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p2" value="nash" checked onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p3" value="nash" checked onChange="stopSimulation()"></td>
+        </tr>
+        <tr>
+          <td>Random 1, 2 or 3</td>
+          <td><input type="radio" name="p1" value="oneTwoThree" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p2" value="oneTwoThree" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p3" value="oneTwoThree" onChange="stopSimulation()"></td>
+        </tr>
+        <tr>
+          <td>Always 1</td>
+          <td><input type="radio" name="p1" value="alwaysOne" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p2" value="alwaysOne" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p3" value="alwaysOne" onChange="stopSimulation()"></td>
+        </tr>
+        <tr>
+          <td>Always 2</td>
+          <td><input type="radio" name="p1" value="alwaysTwo" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p2" value="alwaysTwo" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p3" value="alwaysTwo" onChange="stopSimulation()"></td>
+        </tr>
+        <tr>
+          <td>Always 99</td>
+          <td><input type="radio" name="p1" value="always99" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p2" value="always99" onChange="stopSimulation()"></td>
+          <td><input type="radio" name="p3" value="always99" onChange="stopSimulation()"></td>
+        </tr>
+      </tbody>
     </table>
 
     <div id="controls">
       <button onclick="round ? stopSimulation() : startSimulation()">Start simulation</button>
       <form onChange="updateSpeed()">
         <p>Speed: 
-          <label><input type="radio" name="speed" value="1"> x1</label>
-          <label><input type="radio" name="speed" value="2"> x2</label>
-          <label><input type="radio" name="speed" value="10" checked> x10</label>
-          <label><input type="radio" name="speed" value="100"> x100</label>
-          <label><input type="radio" name="speed" value="1000"> x1000</label>
+        <label><input type="radio" name="speed" value="1"> x1</label>
+        <label><input type="radio" name="speed" value="2"> x2</label>
+        <label><input type="radio" name="speed" value="10" checked> x10</label>
+        <label><input type="radio" name="speed" value="100"> x100</label>
+        <label><input type="radio" name="speed" value="1000"> x1000</label>
         </p>
       </form>
     </div>
@@ -110,6 +121,6 @@
         <div id="p3"></div>
       </div>
       <div id="logs">
-    </div>
-</body>
+      </div>
+  </body>
 </html>
