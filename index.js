@@ -42,13 +42,12 @@ const alwaysTwo = () => 2;
 const always99 = () => 99;
 const nash = () => {
   let n = 1;
-  const random = Math.random();
-  // Limit to 1000, although unlikely
-  while (n < 1000 && random >= 1 - (1 / (2 ** n))) {
+  while (Math.random() > 0.5) {
     n++;
   }
   return n;
 };
+
 const STRATEGIES = {
   oneTwoThree: strategyPickOneTwoOrThree,
   alwaysOne: alwaysOne,
